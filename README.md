@@ -3,4 +3,4 @@
    - Linux
    - gcc
    - gnustep-base and config
-
+![Calculator][../calculator.png]
