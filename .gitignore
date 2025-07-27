@@ -1,0 +1,22 @@
+# Ignore build artifacts
+*.o
+*.out
+*.exe
+*.app
+*.apk
+*.dSYM/
+*.log
+
+# SDL2 font/assets cache
+*.ttf~
+*.swp
+
+# macOS/Linux build files
+build/
+*.DS_Store
+*.so
+*.a
+
+# Backup files
+*~
+

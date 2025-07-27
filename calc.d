@@ -1,2 +1,2 @@
-calc: CalcButton.m CalcButton.h
-CalcButton.h:
+calc: src/CalcButton.m src/CalcButton.h
+src/CalcButton.h:
