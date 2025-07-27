@@ -3,6 +3,7 @@
    - Linux
    - gcc
    - gnustep-base and config
+   - install SDL2
 
 
 ![Calculator](calculator.png)
