@@ -19,6 +19,6 @@
 - (BOOL)setup;
 - (void)run;
 - (void)cleanup;
-
+- (double)eval:(NSString *)expr;
 @end
 

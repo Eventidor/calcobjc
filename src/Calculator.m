@@ -67,7 +67,7 @@
         }
 
         btn.label = labelStr;
-        btn.isOperator = [@[@"/", @"*", @"-", @"+", @"="] containsObject:labelStr];
+        btn.isOperator = [[NSArray arrayWithObjects:@"/", @"*", @"-", @"+", @"=", nil] containsObject:labelStr];
         [buttons addObject:btn];
     }
 
@@ -82,7 +82,7 @@
         double r = [self eval:input];
         [output setString:[NSString stringWithFormat:@"%.6g", r]];
     } else {
-        if ([@[@"+", @"-", @"*", @"/"] containsObject:label]) {
+        if ([[NSArray arrayWithObjects:@"+", @"-", @"*", @"/", nil] containsObject:label]) {
             [input appendFormat:@" %@ ", label];
         } else {
             [input appendString:label];
@@ -90,7 +90,7 @@
     }
 }
 
-- (double)eval:(NSString *)expr {
+/* - (double)eval:(NSString *)expr {
     double a, b; char op;
     if (sscanf([expr UTF8String], "%lf %c %lf", &a, &op, &b) == 3) {
         switch(op) {
@@ -101,8 +101,20 @@
         }
     }
     return 0;
+}*/
+- (double)eval:(NSString *)expr {
+    double a, b;
+    char op;
+    if (sscanf([expr UTF8String], "%lf %c %lf", &a, &op, &b) == 3) {
+        switch(op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return b != 0 ? a / b : 0;
+        }
+    }
+    return 0;
 }
-
 - (void)drawRoundedButton:(CalcButton *)btn {
     SDL_Color color = btn.isOperator ? (SDL_Color){255, 149, 0, 255} :
                       [btn.label isEqualToString:@"AC"] ? (SDL_Color){192, 192, 192, 255} :

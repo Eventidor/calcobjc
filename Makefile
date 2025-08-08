@@ -14,7 +14,7 @@ OBJCFLAGS = -fobjc-exceptions -Wall -g
 all: $(APP_NAME)
 
 $(APP_NAME): $(OBJC_FILES)
-	clang $(OBJC_FILES) $(CFLAGS) $(OBJCFLAGS) $(GNU_OBJC_CFLAGS) $(SDL_CFLAGS) -o $(APP_NAME) $(SDL_LDFLAGS) $(GNU_LDFLAGS) -lobjc
+	gcc $(OBJC_FILES) $(CFLAGS) $(OBJCFLAGS) $(GNU_OBJC_CFLAGS) $(SDL_CFLAGS) -o $(APP_NAME) $(SDL_LDFLAGS) $(GNU_LDFLAGS) -lobjc
 
 clean:
 	rm -rf $(APP_NAME) $(APP_NAME).d
